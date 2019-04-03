@@ -10,4 +10,4 @@ int Menu (int ban1, int ban2, int banMenu, int primerNumero, int segundoNumero);
 
 int Numero();
 
-int factorial (int numerito);
+double factorial (double numerito);

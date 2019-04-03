@@ -77,7 +77,7 @@ int Menu (int ban1, int ban2, int banMenu, int primerNumero, int segundoNumero)
         }
         else
         {
-            printf("\ne) El factorial de %d es: %d ", A, factorial(A));
+            printf("\ne) El factorial de %d es: %f ", A, factorial(A));
         }
 
         if(B<0)
@@ -86,7 +86,7 @@ int Menu (int ban1, int ban2, int banMenu, int primerNumero, int segundoNumero)
         }
         else
         {
-            printf("\ne)   El factorial de %d es: %d ", B, factorial(B));
+            printf("\ne)   El factorial de %d es: %f ", B, factorial(B));
         }
     }
 
@@ -126,9 +126,9 @@ int Menu (int ban1, int ban2, int banMenu, int primerNumero, int segundoNumero)
         return primerNumero/segundoNumero;
     }
 
-    int factorial (int numerito)
+    double factorial (double numerito)
     {
-    int fac;
+    double fac;
 
     fac=numerito;
 
