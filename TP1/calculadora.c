@@ -71,7 +71,7 @@ int Menu (int ban1, int ban2, int banMenu, int primerNumero, int segundoNumero)
 
         printf("\nd) El resultado de %d*%d es: %d", A, B, mul(A, B));
 
-        if(A<0)
+        if(A<0) /*  Si el número es negativo no se puede calcular el factorial. */
         {
             printf("\ne) No es posible calcular factorial de %d (numero negativo)", A);
         }
@@ -80,7 +80,7 @@ int Menu (int ban1, int ban2, int banMenu, int primerNumero, int segundoNumero)
             printf("\ne) El factorial de %d es: %f ", A, factorial(A));
         }
 
-        if(B<0)
+        if(B<0) /*  Si el número es negativo no se puede calcular el factorial. */
         {
             printf("\ne)  No es posible calcular factorial de %d (numero negativo)", B);
         }
@@ -91,42 +91,42 @@ int Menu (int ban1, int ban2, int banMenu, int primerNumero, int segundoNumero)
     }
 
     printf("\n\n5) Salir");
-     printf("\n\nIngresa tu opcion: ");
-     scanf("%d", &opcion);
+    printf("\n\nIngresa tu opcion: ");
+    scanf("%d", &opcion);
 
-        return opcion;
+    return opcion;
 
 
 }
 
-    int Numero()
+    int Numero() /* Ésta variable es generada através de las variables A y B . */
     {
         int num;
         scanf("%d",&num);
         return num;
     }
 
-    int suma (int primerNumero, int segundoNumero)
+    int suma (int primerNumero, int segundoNumero) /* Función de suma */
     {
         return primerNumero+segundoNumero;
     }
 
-    int res (int primerNumero, int segundoNumero)
+    int res (int primerNumero, int segundoNumero) /* Función de resta */
     {
         return primerNumero-segundoNumero;
     }
 
-    int mul (int primerNumero, int segundoNumero)
+    int mul (int primerNumero, int segundoNumero) /* Función multiplicación */
     {
         return primerNumero*segundoNumero;
     }
 
-    int division (int primerNumero, int segundoNumero)
+    int division (int primerNumero, int segundoNumero) /* Función para dividir */
     {
         return primerNumero/segundoNumero;
     }
 
-    double factorial (double numerito)
+    double factorial (double numerito) /* Función factorial */
     {
     double fac;
 
