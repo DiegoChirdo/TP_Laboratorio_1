@@ -2,21 +2,22 @@
 #include <stdlib.h>
 #include "calculadora.h"
 
-int Menu (int ban1, int ban2, int banMenu, int primerNumero, int segundoNumero)
+int Menu (int ban1, int ban2, int banMenu, int primerNumero, int segundoNumero) /* Éste es el menú en sí */
 {
     int opcion;
     int A;
     int B;
 
     printf("\n\n-------Calculadora de Diego Chirdo-------\n");
+
     if(ban1==0)
     {
         printf("\n\n1) Ingrese el primer numero. - (A)");
     }
     else
     {
-        A=primerNumero;
-        printf("\n2) Primer numero es: %d", A);
+        A=primerNumero; /* A primerNumero y a segundoNumero se les asigna A y B (respectivamente) */
+        printf("\n1) Primer numero es: %d", A);
     }
     if (ban2==0)
     {
@@ -27,7 +28,7 @@ int Menu (int ban1, int ban2, int banMenu, int primerNumero, int segundoNumero)
         B=segundoNumero;
         printf("\n2) Segundo numero es: %d", B);
     }
-    if (ban1 == 1 && ban2  == 1)
+    if (ban1 == 1 && ban2  == 1) /* Si los números fueron ingresados, muestra las operaciones que se van a realizar. */
     {
         printf("\n3) Se haran las siguientes operaciones: \n");
         printf("\na) Suma (%d + %d)", A, B);
@@ -36,7 +37,7 @@ int Menu (int ban1, int ban2, int banMenu, int primerNumero, int segundoNumero)
         printf("\nd) Multiplicacion (%d * %d)", A, B);
         printf("\ne) Factoriales (%d! & %d!)", A, B);
     }
-    else
+    else /* Sino, muestra lo que se hará sin especificar los números (Éste es el inicio del menú) */
     {
         printf("\n3) Se haran las siguientes operaciones: \n");
         printf("\na) Suma (A+B)");
@@ -45,7 +46,7 @@ int Menu (int ban1, int ban2, int banMenu, int primerNumero, int segundoNumero)
         printf("\nd) Multiplicación (A*B)");
         printf("\ne) Factoriales (A! & B!)");
     }
-    if (banMenu==0)
+    if (banMenu==0) /* Si banMenu es 0, el menú mostrará lo siguiente (los ejercicios sin resolver) */
     {
         printf("\n\n4) Informe de resultados: ");
         printf("\na) El resultado de A+B es: RESPUESTA");
@@ -54,12 +55,12 @@ int Menu (int ban1, int ban2, int banMenu, int primerNumero, int segundoNumero)
         printf("\nd) El resultado de A*B es: RESPUESTA");
         printf("\ne) El resultado de A! y B! es: RESPUESTA y RESPUESTA (respectivamente)");
     }
-    if (banMenu==1)
+    if (banMenu==1) /* Si banMenu es 1, muestra todo lo siguiente (ya resuelto) */
     {
         printf("\n\n4) Informe de resultados: ");
         printf("\na) El resultado de %d+%d es: %d", A, B, suma(A, B));
         printf("\nb) El resultado de %d-%d es: %d", A, B, res(A, B));
-        if (B==0)
+        if (B==0) /* Si el segundo número es igual a 0, no se podrá dividir */
         {
             printf("\nc) Es imposible dividir por 0");
         }

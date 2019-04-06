@@ -30,3 +30,8 @@
 
 1554511368 c:\users\diego\desktop\tp\tp_laboratorio_1\tp1\calculadora.h
 
+1554513249 source:c:\users\diego\desktop\tp\tp_laboratorio_1\tp1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"calculadora.h"
+
