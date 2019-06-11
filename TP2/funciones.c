@@ -145,11 +145,12 @@ int listarEdad(EPersona vec[], int cant)
         printf("\nAun no se han ingresado datos. \n");
         return 0;
     }
+    printf("<18\t-\t19-35\t-\t>35\t\n");
     for(i=0;i<cant;i++)
     {
         if(vec[i].estado==-1)
         {
-            printf("<18   -   19-35   -   >35\n");
+
         }
     }
     return 0;
