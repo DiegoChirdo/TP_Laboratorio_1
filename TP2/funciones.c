@@ -135,11 +135,16 @@ int listarNombre(EPersona vec[], int cant)
     return 0;
 }
 
-void listarEdad(EPersona vec[], int cant)
+int listarEdad(EPersona vec[], int cant)
 {
     system("cls");
     printf("LISTAR EDADES: \n");
     int i;
+    if(vec[0].estado==0)
+    {
+        printf("\nAun no se han ingresado datos. \n");
+        return 0;
+    }
     for(i=0;i<cant;i++)
     {
         if(vec[i].estado==-1)
@@ -147,4 +152,5 @@ void listarEdad(EPersona vec[], int cant)
             printf("<18   -   19-35   -   >35\n");
         }
     }
+    return 0;
 }
