@@ -7,7 +7,9 @@ typedef struct {
     int edad;
     int estado;
     int dni;
-
+    char menor;
+    char mediano;
+    char mayor;
 }EPersona;
 
 int listarEdad(EPersona vec[], int cant);

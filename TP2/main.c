@@ -34,7 +34,7 @@ int main()
                 listarNombre(persona, CANTIDAD);
                 break;
             case 4:
-                printf("hey");
+                listarEdad(persona, CANTIDAD);
                 break;
             case 5:
                 seguir = 'n';

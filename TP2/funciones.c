@@ -150,7 +150,31 @@ int listarEdad(EPersona vec[], int cant)
     {
         if(vec[i].estado==-1)
         {
-
+            if(vec[i].edad <= 18)
+            {
+                vec[i].menor = '*';
+                vec[i].mediano = ' ';
+                vec[i].mayor = ' ';
+            }
+            if(vec[i].edad >18 && vec[i].edad < 36)
+            {
+                vec[i].menor = ' ';
+                vec[i].mediano = '*';
+                vec[i].mayor = ' ';
+            }
+            if(vec[i].edad > 35)
+            {
+                vec[i].menor = ' ';
+                vec[i].mediano = ' ';
+                vec[i].mayor = '*';
+            }
+        }
+    }
+    for(i=0;i<cant;i++)
+    {
+        if(vec[i].estado == -1)
+        {
+            printf("%c  -  %c  -  %c\n",vec[i].menor,vec[i].mediano,vec[i].mayor);
         }
     }
     return 0;
