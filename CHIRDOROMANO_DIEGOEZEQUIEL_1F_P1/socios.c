@@ -847,3 +847,8 @@ void librosPorTitulo(Libro array[], int cant)
         }
     }
 }
+
+void sociosPorApellido(Socio arr[], int cant)
+{
+
+}
