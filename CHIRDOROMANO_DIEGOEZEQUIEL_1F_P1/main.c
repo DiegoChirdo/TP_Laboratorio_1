@@ -147,7 +147,7 @@ int main()
                 case 10:
                     system("cls");
                     printf("SOCIOS ORDENADOS POR APELLIDO: \n");
-
+                    sociosPorApellido(arraySocios, CANTIDAD);
                     break;
                 }
             }
