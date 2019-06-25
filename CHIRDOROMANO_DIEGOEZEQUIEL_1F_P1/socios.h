@@ -41,6 +41,7 @@ typedef struct
     char telefono[16];
     char email[31];
     Fecha fechaSocio;
+    int contador;
     int isEmpty;
 }Socio;
 
@@ -92,5 +93,6 @@ void librosPorTitulo(Libro array[], int cant);
 void sociosPorApellido(Socio arr[], int cant);
 int prestamoMenor(Prestamos vec[],vecesPrestado index[], int cant);
 int recorrerPrestamos(Prestamos vec[], vecesPrestado index[], int cant);
+int socioMasPrestamos(Socio vec[], int cant);
 
 #endif // SOCIOS_H_INCLUDED

@@ -98,6 +98,7 @@ int main()
             while(opcionListado!=11)
             {
                 opcionListado=menuListado();
+                fflush(stdin);
                 switch(opcionListado)
                 {
                 case 1:
@@ -129,7 +130,7 @@ int main()
                 case 6:
                     system("cls");
                     printf("SOCIO QUE REALIZO MAS PRESTAMOS: \n");
-
+                    socioMasPrestamos(arraySocios,CANTIDAD);
                     break;
                 case 7:
                     system("cls");

@@ -347,6 +347,7 @@ int altaPrestamos(Prestamos vec[],Libro array[], Socio arr[], int cant)
     strcpy(vec[indexLibre].codigoLibro.titulo,array[buscarCodigoSocio(arr,cant,busquedaSocio)].titulo);
     vec[indexLibre].codigoSocio.codigo=busquedaSocio;
     vec[indexLibre].isEmpty=1;
+    arr[buscarCodigoSocio(arr,cant,busquedaSocio)].contador++;
     printf("HECHO!!!\n");
     return 0;
 }
@@ -748,6 +749,32 @@ int libroPrestamoDeterminado(Socio arr[], Prestamos vec[], int cant)
     return 0;
 }*/
 
+int socioMasPrestamos(Socio vec[], int cant)
+{
+    int i,j,aux;
+    char auxStringApellido[51];
+    char auxStringNombre[51];
+    for(i=0;i<cant-1;i++)
+    {
+        for(j=i+1;j<cant;j++)
+        {
+            if(vec[i].contador>vec[j].contador && vec[i].isEmpty == 1 && vec[j].isEmpty == 1)
+            {
+                aux=vec[i].codigo;
+                strcpy(auxStringApellido,vec[i].apellido);
+                strcpy(auxStringNombre,vec[i].nombre);
+                strcpy(vec[i].apellido,vec[j].apellido);
+                strcpy(vec[i].nombre,vec[j].nombre);
+                strcpy(vec[j].apellido,auxStringApellido);
+                strcpy(vec[j].nombre,auxStringNombre);
+                vec[j].codigo=aux;
+            }
+        }
+    }
+    printf("SOCIO CODIGO: %d  -  DE NOMBRE Y APELLIDO %s %s\n", vec[0].codigo, vec[0].nombre, vec[0].apellido);
+    return 0;
+}
+
 int prestamoMenor(Prestamos vec[],vecesPrestado index[],int cant)
 {
     int i,j, aux;
@@ -756,7 +783,7 @@ int prestamoMenor(Prestamos vec[],vecesPrestado index[],int cant)
     {
         for(j=i+1;j<cant;j++)
         {
-            if(index[i].contador>index[j].contador)
+            if(index[i].contador<index[j].contador)
             {
                 aux=index[i].index;
                 strcpy(auxString, index[i].titulo);
@@ -769,7 +796,10 @@ int prestamoMenor(Prestamos vec[],vecesPrestado index[],int cant)
     }
     printf("LIBRO MENOR PRESTADO CON %d veces: \n",index[0].contador);
     printf("%d  -  %s\n\n", index[0].index, index[0].titulo);
-    index[0].contador=0;
+    for(i=0;i<cant;i++)
+    {
+        index[i].contador=0;
+    }
     return 0;
 }
 
