@@ -10,6 +10,14 @@ typedef struct
 
 typedef struct
 {
+    int index;
+    char titulo[51];
+    int isEmpty;
+    int contador;
+}vecesPrestado;
+
+typedef struct
+{
     int codigo;
     char apellido[31];
     char nombre[31];
@@ -82,5 +90,7 @@ int prestamoFechaDeterminada(Prestamos vec[], int cant);
 int sociosFechaDeterminada(Prestamos vec[], Socio arr[], int cant);
 void librosPorTitulo(Libro array[], int cant);
 void sociosPorApellido(Socio arr[], int cant);
+int prestamoMenor(Prestamos vec[],vecesPrestado index[], int cant);
+int recorrerPrestamos(Prestamos vec[], vecesPrestado index[], int cant);
 
 #endif // SOCIOS_H_INCLUDED

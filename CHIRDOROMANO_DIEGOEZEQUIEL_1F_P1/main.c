@@ -31,6 +31,7 @@ int main()
     int opcion;
     int opcionAutores;
     int opcionListado;
+    vecesPrestado index[CANTIDAD];
 
     inicializarSocios(arraySocios,CANTIDAD);
     inicializarPrestamo(arrayPrestamos,CANTIDAD);
@@ -122,7 +123,8 @@ int main()
                 case 5:
                     system("cls");
                     printf("LIBRO MENOS SOLICITADO: \n");
-
+                    recorrerPrestamos(arrayPrestamos,index,CANTIDAD);
+                    prestamoMenor(arrayPrestamos,index,CANTIDAD);
                     break;
                 case 6:
                     system("cls");
