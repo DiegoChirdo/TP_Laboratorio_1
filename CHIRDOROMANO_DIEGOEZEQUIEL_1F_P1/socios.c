@@ -885,9 +885,7 @@ void librosPorTitulo(Libro array[], int cant)
 void sociosPorApellido(Socio arr[], int cant)
 {
     int i, j;
-    int auxiliarCodigo;
-    char auxiliarNombre[50];
-    char auxiliarApellido[50];
+    int libre;
 
     for(i=0;i<cant-1;i++)
     {
@@ -895,15 +893,11 @@ void sociosPorApellido(Socio arr[], int cant)
         {
             if(strcmp(arr[i].apellido,arr[j].apellido)==1)
             {
-                strcpy(auxiliarApellido,arr[i].apellido);
-                strcpy(auxiliarNombre,arr[i].nombre);
-                auxiliarCodigo=arr[i].codigo;
-                strcpy(arr[i].apellido,arr[j].apellido);
-                strcpy(arr[i].nombre,arr[j].nombre);
-                arr[i].codigo=arr[j].codigo;
-                strcpy(arr[j].apellido,auxiliarApellido);
-                strcpy(arr[j].nombre,auxiliarNombre);
-                arr[j].codigo=auxiliarCodigo;
+                libre = buscarLibre(arr, cant);
+                arr[libre] = arr[i];
+                arr[i] = arr[j];
+                arr[j] = arr[libre];
+                arr[libre].isEmpty = -1;
             }
         }
     }
